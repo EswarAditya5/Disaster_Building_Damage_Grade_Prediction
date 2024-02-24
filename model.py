@@ -94,4 +94,4 @@ treepredict_tt=treepredict_tt.replace({0:'Low Damage',1:'Medium Damage',2:'High 
 treepredict_tt.value_counts()
 
 import joblib
-joblib.dump(treemodel,'tree_model_smote.sav')
+joblib.dump(tree,'tree_model_smote.sav')
