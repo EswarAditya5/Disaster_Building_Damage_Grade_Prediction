@@ -2,11 +2,6 @@ import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
 
-import joblib
-def predict(data):
-    clf = joblib.load('tree_model_smote.sav')
-    return clf.predict(data)
-
 def label_encode_data(input_data):
     label_encoder = LabelEncoder()
     categorical_variables = ['count_floors_pre_eq','land_surface_condition','foundation_type','roof_type','ground_floor_type','other_floor_type','position','plan_configuration','legal_ownership_status']
@@ -104,7 +99,10 @@ input_data = pd.DataFrame({
 
 
 input_data = label_encode_data(input_data)
-
+import joblib
+def predict(data):
+    clf = joblib.load('tree_model_smote.sav')
+    return clf.predict(data)
 
 # Prediction
 if st.button('Predict'):
