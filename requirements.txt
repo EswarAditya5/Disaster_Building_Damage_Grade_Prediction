@@ -2,3 +2,4 @@ Pandas
 Streamlit
 joblib
 numpy
+scikit-learn
