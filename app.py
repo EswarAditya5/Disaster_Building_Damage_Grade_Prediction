@@ -4,13 +4,12 @@ from sklearn.preprocessing import LabelEncoder
 
 import joblib
 def predict(data):
-    clf = joblib.load('tree_model_smote.sav')  # Assuming the correct model filename is 'gbc_model.sav'
+    clf = joblib.load('tree_model_smote.sav')
     return clf.predict(data)
 
 def label_encode_data(input_data):
     label_encoder = LabelEncoder()
-    categorical_variables = ['count_floors_pre_eq','land_surface_condition','foundation_type','roof_type','ground_floor_type','other_floor_type',
-                             'position','plan_configuration','legal_ownership_status']
+    categorical_variables = ['count_floors_pre_eq','land_surface_condition','foundation_type','roof_type','ground_floor_type','other_floor_type','position','plan_configuration','legal_ownership_status']
     for variable in categorical_variables:
         input_data[variable] = label_encoder.fit_transform(input_data[variable])
     return input_data
@@ -32,13 +31,6 @@ age = st.number_input('Age of the Building (Years)', min_value=0,max_value=60)
 area_percentage = st.number_input('Area Percentage', min_value=0, max_value=100)
 height_percentage = st.number_input('Height Percentage', min_value=0,max_value=10)
 count_floors_pre_eq = st.number_input('Number of Floors Pre-Earthquake', min_value=0)
-
-# Collecting input variables
-#area_percentage_str = st.text_input('Area Percentage (e.g., 0-5)', value='')
-# Extracting numerical value from the input string (assuming it's in the format '0-5')
-#area_percentage = float(area_percentage_str.split('-')[0]) if area_percentage_str else None
-
-
 land_surface_condition = st.selectbox('Land Surface Condition', options=['n', 'o', 't'])
 foundation_type = st.selectbox('Foundation Type', options=['h', 'i', 'r', 'u', 'w'])
 roof_type = st.selectbox('Roof Type', options=['n', 'q', 'x'])
