@@ -1,7 +1,6 @@
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
-from predictions import predict
 
 import joblib
 def predict(data):
