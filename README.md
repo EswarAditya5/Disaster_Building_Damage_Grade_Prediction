@@ -18,7 +18,7 @@ There are 39 variables in the training dataset. The dataset is semi-anonymized b
 6.  'r' type of foundation is the leading type of foundation found in most of the damaged buildings.
 
 **Data Modelling**  
-Below are few things that I tried to get maximum F-1 Score on test data by uploading the results on drivendata competition page. 
+Below are few things that I tried to get maximum F-1 Score on test data. 
 
 1.  Parameter tuning for Random Forest and XGBoost
 2.  Upsampling and downsampling the training data to deal with class imbalance.
