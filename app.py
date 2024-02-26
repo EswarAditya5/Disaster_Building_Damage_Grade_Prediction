@@ -36,8 +36,8 @@ int_columns_tt = ['count_floors_pre_eq','has_superstructure_adobe_mud','has_supe
 test1[int_columns_tt] = test1[int_columns_tt].astype('object')
 
 # splitting into numcols and objcols
-numcols=df.select_dtype(np.number)
-objcols=df.select_dtype('np.number')
+numcols=df.select_dtypes(np.number)
+objcols=df.select_dtypes('np.number')
 
 from sklearn.preprocessing import MinMaxScaler
 mm=MinMaxScaler()
@@ -45,8 +45,8 @@ numcols_mm=mm.fit_transform(numcols)
 numcols_mm=pd.DataFrame(numcols_mm,columns=numcols.columns)
 
 # splitting into numcols and objcols test file
-numcols1=test1.select_dtype(np.number)
-objcols1=test1.select_dtype('np.number')
+numcols1=test1.select_dtypes(np.number)
+objcols1=test1.select_dtypes('np.number')
 
 numcols_mm_tt=mm.fit_transform(numcols1)
 numcols_mm_tt=pd.DataFrame(numcols_mm_tt,columns=numcols1.columns)
