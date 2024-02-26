@@ -76,16 +76,9 @@ X,y=sm.fit_resample(X,y)
 from sklearn.tree import DecisionTreeClassifier
 tree=DecisionTreeClassifier(max_depth=50, criterion='entropy',splitter='random')
 treemodel=tree.fit(X,y)
-treemodel.predict(X,y)
-cross_val_score(tree,X,y)
-np.mean([0.52589101, 0.52278571, 0.51742857, 0.50321429, 0.39735714])
+treemodel.score(X,y)
 tree_X=treemodel.predict(X)
-pd.crosstab(y,tree_X)
-print(classification_report(y,tree_X))
-treepredict_test=treemodel.predict(test1)
-treepredict_tt=pd.DataFrame(treepredict_test)
-treepredict_tt=treepredict_tt.replace({0:'Low Damage',1:'Medium Damage',2:'High Damage'})
-treepredict_tt.value_counts()
+
 
 import joblib
 joblib.dump(tree,'tree_model_smote.sav')
