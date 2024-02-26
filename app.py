@@ -99,10 +99,6 @@ input_data = pd.DataFrame({
 
 
 input_data = label_encode_data(input_data)
-import joblib
-def predict(data):
-    clf = joblib.load('tree_model_smote.sav')
-    return clf.predict(data)
 
 # Prediction
 if st.button('Predict'):
