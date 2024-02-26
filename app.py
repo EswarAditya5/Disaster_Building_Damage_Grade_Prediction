@@ -60,7 +60,7 @@ has_secondary_use_use_police = st.selectbox('Has Secondary Use Police',options=[
 has_secondary_use_other = st.selectbox('Has Secondary Use Other',options=['0','1'])
 
 # Prepare input data
-input_data = pd.DataFrame({
+"""input_data = pd.DataFrame({
     'age': [age],
     'area_percentage': [area_percentage],
     'height_percentage': [height_percentage],
@@ -99,7 +99,7 @@ input_data = pd.DataFrame({
 })
 
 
-input_data = label_encode_data(input_data)
+input_data = label_encode_data(input_data)"""
 
 # Prediction
 if st.button('Predict'):
