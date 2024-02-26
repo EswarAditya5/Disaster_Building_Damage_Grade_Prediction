@@ -145,7 +145,7 @@ def predict(data):
 # Prediction
 if st.button('Predict'):
     prediction = predict(np.array(X))
-    st.text(predictio[0])
+    st.text(prediction[0])
     #if prediction == 0:
      #   st.markdown(f"The building damage condition is Low")
     #elif prediction == 1:
