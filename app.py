@@ -1,6 +1,7 @@
 import streamlit as st
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder
+from prediction import predict
 
 def label_encode_data(input_data):
     label_encoder = LabelEncoder()
