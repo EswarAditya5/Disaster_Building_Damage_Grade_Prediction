@@ -63,23 +63,13 @@ test1=pd.concat([numcols_tt_mm,objcols1],axis=1)
 X=combinedf.drop('damage_grade',axis=1)
 y=combinedf.damage_grade
 
-# Decission Tree
-from sklearn.tree import DecisionTreeClassifier
-tree=DecisionTreeClassifier(max_depth=50, criterion='entropy',splitter='random')
-treemodel=tree.fit(X,y)
-treemodel.predict(X,y)
-cross_val_score(tree,X,y)
-np.mean([0.52589101, 0.52278571, 0.51742857, 0.50321429, 0.39735714])
-tree_X=treemodel.predict(X)
-pd.crosstab(y,tree_X)
-print(classification_report(y,tree_X))
-
 from imblearn.over_sampling import SMOTE
 sm=SMOTE()
 X,y=sm.fit_resample(X,y)
 
 
 # Decission Tree
+from sklearn.tree import DecisionTreeClassifier
 tree=DecisionTreeClassifier(max_depth=50, criterion='entropy',splitter='random')
 treemodel=tree.fit(X,y)
 treemodel.predict(X,y)
