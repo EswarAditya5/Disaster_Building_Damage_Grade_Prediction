@@ -103,7 +103,7 @@ input_data = label_encode_data(input_data)
 
 # Prediction
 if st.button('Predict'):
-    prediction = predict(input_data)
+    prediction = predict(np.array(input_data))
     if prediction == 0:
         st.markdown(f"The building damage condition is Low")
     elif prediction == 1:
