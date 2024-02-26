@@ -6,7 +6,7 @@ from prediction import predict
 
 def label_encode_data(input_data):
     label_encoder = LabelEncoder()
-    categorical_variables = ['count_floors_pre_eq','land_surface_condition','foundation_type','roof_type','ground_floor_type','other_floor_type','position','plan_configuration','legal_ownership_status']
+    categorical_variables = ['land_surface_condition','foundation_type','roof_type','ground_floor_type','other_floor_type','position','plan_configuration','legal_ownership_status']
     for variable in categorical_variables:
         input_data[variable] = label_encoder.fit_transform(input_data[variable])
     return input_data
@@ -20,7 +20,6 @@ st.header('Input Variables')
 
 # Collecting input variables
 #building_id = st.number_input('Building ID', min_value=0)
-
 #geo_level_1_id = st.selectbox('Geo Level 1 ID', options=list(range(31)))
 #geo_level_2_id = st.number_input('Geo Level 2 ID', min_value=0, max_value=1427)
 #geo_level_3_id = st.number_input('Geo Level 3 ID', min_value=0, max_value=12567)
@@ -47,7 +46,7 @@ has_superstructure_rc_non_engineered = st.selectbox('Has Superstructure RC Non-E
 has_superstructure_rc_engineered = st.selectbox('Has Superstructure RC Engineered',options=['0','1'])
 has_superstructure_other = st.selectbox('Has Superstructure Other',options=['0','1'])
 legal_ownership_status = st.selectbox('Legal Ownership Status', options=['a', 'r', 'v', 'w'])
-count_families = st.number_input('Number of Families', min_value=0)
+count_families = st.number_input('Number of Families', min_value=0, max_value=10)
 has_secondary_use = st.selectbox('Has Secondary Use',options=['0','1'])
 has_secondary_use_agriculture = st.selectbox('Has Secondary Use Agriculture',options=['0','1'])
 has_secondary_use_hotel = st.selectbox('Has Secondary Use Hotel',options=['0','1'])
