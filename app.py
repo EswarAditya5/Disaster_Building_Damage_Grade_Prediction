@@ -61,7 +61,7 @@ objcols1=objcols1.apply(LabelEncoder().fit_transform)
 # combining the both numcols and objcols
 combinedf=pd.concat([numcols,objcols],axis=1)
 
-test1=pd.concat([numcols_tt_mm,objcols1],axis=1)
+test1=pd.concat([numcols_mm_tt,objcols1],axis=1)
 
 # splitting into dependent varibale(y) and independent variables(X's)
 X=combinedf.drop('damage_grade',axis=1)
