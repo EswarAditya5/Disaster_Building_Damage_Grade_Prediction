@@ -85,7 +85,6 @@ joblib.dump(tree,'tree_model_smote.sav')
 
 # ------------- 
 
-
 # Title
 st.title('Earthquake Building Damage Grade Prediction')
 
