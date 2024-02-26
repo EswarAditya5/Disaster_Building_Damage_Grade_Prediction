@@ -103,6 +103,7 @@ input_data = label_encode_data(input_data)"""
 
 
 # -------------------------------------------------------------------------------------------------------------------------------------
+
 # importing required libraries
 import pandas as pd
 import numpy as np
@@ -111,8 +112,8 @@ df=pd.read_csv('train.csv')
 test1=pd.read_csv('test.csv')
 
 # We need to remove building_id in both train and test files because it's doesn't change prediction
-dr_tr=dr_tr.drop(['building_id','geo_level_1_id','geo_level_2_id','geo_level_3_id'],axis=1)
-dr_tt=dr_tt.drop(['building_id','geo_level_1_id','geo_level_2_id','geo_level_3_id'],axis=1)
+df=df.drop(['building_id','geo_level_1_id','geo_level_2_id','geo_level_3_id'],axis=1)
+test1=test1.drop(['building_id','geo_level_1_id','geo_level_2_id','geo_level_3_id'],axis=1)
 
 # converting datatype in train file
 int_columns = ['count_floors_pre_eq','has_superstructure_adobe_mud','has_superstructure_mud_mortar_stone', 'has_superstructure_stone_flag',
@@ -191,8 +192,10 @@ treepredict_tt.value_counts()
 import joblib
 joblib.dump(tree,'tree_model_smote.sav')
 
-
-
+import joblib
+def predict(data):
+    clf = joblib.load('tree_model_smote.sav')
+    return clf.predict(data)
 
 #-------------------------------------------------------------------------
 # Prediction
