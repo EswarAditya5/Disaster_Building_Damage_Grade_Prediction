@@ -86,7 +86,13 @@ joblib.dump(tree,'tree_model_smote.sav')
 # ------------- 
 
 # Title
-st.title('Earthquake Building Damage Grade Prediction')
+
+st.set_page_config(
+    page_title="Earthquake Building Damage Grade Prediction", 
+    page_icon="🌎", 
+    layout='wide'
+)
+
 
 # Sidebar with input fields
 st.header('Details of the building')
