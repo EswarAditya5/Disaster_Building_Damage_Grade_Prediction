@@ -104,10 +104,11 @@ input_data = label_encode_data(input_data)
 # Prediction
 if st.button('Predict'):
     prediction = predict(np.array(input_data))
-    if prediction == 0:
-        st.markdown(f"The building damage condition is Low")
-    elif prediction == 1:
-        st.markdown(f"The building damage condition is Medium")
-    else:
-        st.markdown(f"The building damage condition is High")
+    st.text(predictio[0])
+    #if prediction == 0:
+     #   st.markdown(f"The building damage condition is Low")
+    #elif prediction == 1:
+     #   st.markdown(f"The building damage condition is Medium")
+    #else:
+     #   st.markdown(f"The building damage condition is High")
     st.balloons()
