@@ -85,8 +85,7 @@ joblib.dump(tree,'tree_model_smote.sav')
 
 # ------------- 
 
-# Title
-
+# page setup
 st.set_page_config(
     page_title="Richter's Predictor: Modeling Earthquake Damage", 
     page_icon="🌎", 
